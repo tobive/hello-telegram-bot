@@ -1,4 +1,10 @@
 #config.py
-#this module holds global variable
+#this module took variables from env
+from os.path import join, dirname
+from os import environ
+from dotenv import load_dotenv
 
-BOT_TOKEN = '531931591:AAFn5DnYUkwdf9Pcue-Wr7DwOXYR0UV4iFM'
+dotenv_path = join(dirname(__file__),'.env')
+load_dotenv(dotenv_path)
+
+BOT_TOKEN = environ.get('BOT_TOKEN')
