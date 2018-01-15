@@ -18,7 +18,10 @@ class BotHandler:
     def send_message(self, chat_id, text):
         params = {'chat_id': chat_id, 'text': text}
         method = 'sendMessage'
-        resp = requests.post(self.api_url + method, params)
+        try:
+            resp = requests.post(self.api_url + method, params)
+        except requests.ConnectionError as e:
+            print(e)
         print("send message!")
         return resp
 
