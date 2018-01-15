@@ -16,6 +16,7 @@ def main():
     saved_msg_id = last_update['message']['message_id']
 
     while True:
+        print("***** NOW is {} and HOUR is {}".format(now, hour))
         greet_bot.get_updates(new_offset)
 
         last_update = greet_bot.get_last_update()
