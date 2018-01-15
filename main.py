@@ -27,7 +27,7 @@ def main():
         last_chat_name = last_update['message']['chat']['first_name']
         print('*** isi LAST CHAT adalah {}'.format(last_chat_text.lower()))
         print('*** SAVED MSG ID adalah {} dan LAST MSG ID adalah {}'.format(saved_msg_id, last_msg_id))
-        if last_chat_text.lower() in greetings and last_msg_id != saved_msg_id and 6 <= hour < 12:
+        if last_chat_text.lower() in greetings and last_msg_id != saved_msg_id and 0 <= hour < 12:
             print('***Preparing to send a reply...')
             greet_bot.send_message(last_chat_id, 'Good Morning {}'.format(last_chat_name))
             saved_msg_id = last_msg_id
