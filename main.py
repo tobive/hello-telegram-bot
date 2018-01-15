@@ -26,14 +26,17 @@ def main():
         last_chat_name = last_update['message']['chat']['first_name']
 
         if last_chat_text.lower() in greetings and last_msg_id != saved_msg_id and 6 <= hour < 12:
+            print('***Preparing to send a reply...')
             greet_bot.send_message(last_chat_id, 'Good Morning {}'.format(last_chat_name))
             saved_msg_id = last_msg_id
 
         elif last_chat_text.lower() in greetings and last_msg_id != saved_msg_id and 12 <= hour < 17:
+            print('***Preparing to send a reply...')
             greet_bot.send_message(last_chat_id, 'Good Afternoon {}'.format(last_chat_name))
             saved_msg_id = last_msg_id
 
         elif last_chat_text.lower() in greetings and last_msg_id != saved_msg_id and 17 <= hour < 23:
+            print('***Preparing to send a reply...')
             greet_bot.send_message(last_chat_id, 'Good Evening {}'.format(last_chat_name))
             saved_msg_id = last_msg_id
         time.sleep(5)
